@@ -1,13 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "./HomePage";
 import { Avatar, Box,Typography } from "@mui/material";
-const UserName =()=>{
+const UserName =()=>{    
     const context = useContext(UserContext);
-let l : string=''
-let namef :string =''
+    useEffect(() => {
+        console.log("User context updated:", context?.user);
+      }, [context?.user]);
+    let l : string=''
+    let namef :string =''
 if(context){
      l = context.user.firstName[0];
-    namef = context.user.firstName
+    namef = context.user.firstName;
 }
 return (<>
 <Box sx={{ display: "flex", alignItems: "center"}}>
