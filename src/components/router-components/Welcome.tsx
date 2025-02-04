@@ -1,7 +1,7 @@
 const welcome = () => {
 
     return (<>
-        <h1>welcome</h1>        
+        <h1>wellcome</h1>
     </>)
 }
 export default welcome

@@ -10,7 +10,7 @@ const UserName =()=>{
     let namef :string =''
 if(context){
      l = context.user.firstName[0];
-    namef = context.user.firstName;
+     namef = context.user.firstName;
 }
 return (<>
 <Box sx={{ display: "flex", alignItems: "center"}}>

@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+.links-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: flex; /* שימוש ב-flexbox */
+  justify-content: flex-start; /* מסדר את הקישורים משמאל לימין */
+}
+
+.links-container a {
+  margin-left: 10px; /* רווח בין הקישורים */
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}

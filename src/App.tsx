@@ -2,14 +2,17 @@ import { RouterProvider } from 'react-router'
 import './App.css'
 import HomePage from './components/HomePage'
 import { myRouter } from './Router'
+import recipesStore from './recipesStore'
+import { Provider } from 'react-redux'
 
-function App() {
+function App() {  
   
   return (
     <>
-        <div>app</div>
+        <Provider store={recipesStore}>
         <RouterProvider router={myRouter} />
-        <HomePage></HomePage>  
+        <HomePage></HomePage>
+        </Provider>  
     </>
   )
 }

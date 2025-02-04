@@ -20,6 +20,7 @@ const UpDate = () => {
       return;
     }    
     try {
+      console.log("updateeeeee");
       const res = await fetch("http://localhost:3000/api/user/", {
         method: "PUT",
         body: JSON.stringify({
@@ -40,7 +41,7 @@ const UpDate = () => {
         if (context) {
           context.userDispatch({ type: "UPDATE", data: { id: context?.user.id } });
         }
-        //setOpen(false); // סגור את המודל רק לאחר הצלחה
+        
       }
     } catch (e) {
       console.error(e);
@@ -60,7 +61,8 @@ const UpDate = () => {
         variant="contained"
         color="success"
       >
-        upDate
+        upDate 
+        details
       </Button>
       {open && (
         <Modal

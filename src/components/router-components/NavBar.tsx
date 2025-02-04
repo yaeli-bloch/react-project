@@ -1,13 +1,12 @@
 import { Link } from "react-router"
 
 const NavBar = () => {
-    const name = 'yaeli'
+ 
     return (<>
-        <div>navbar</div>
-        <nav>
+       
+        <nav className="links-container">
             <Link to='/welcome'>welcome</Link> |
-            <Link to='/about'>About</Link> |
-            
+            <Link to='/recipes'>recipes</Link> |            
         </nav>
     </>)
 }
