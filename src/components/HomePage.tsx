@@ -25,10 +25,10 @@ const HomePage = () => {
     phone: ''
   };
   const handleLoginClick = () => {
-    setOpen(prevOpen => !prevOpen);// הופך את המצב כל לחיצה
+    setOpen(prevOpen => !prevOpen);
   };
   const handleRegisterClick = () => {
-    setRgister(prevOpen => !prevOpen);// הופך את המצב כל לחיצה
+    setRgister(prevOpen => !prevOpen);
   };
   const handlLoginSuccess = (flag: boolean) => {
     setLogin(flag);

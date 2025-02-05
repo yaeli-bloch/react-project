@@ -1,8 +1,8 @@
 import { useEffect, } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRecipes } from '../../recipesSlice';
+import { fetchRecipes } from '../../store/recipesSlice';
 import { Box, CircularProgress, Typography, Button } from '@mui/material';
-import { RootState, AppDispatch } from '../../recipesStore';
+import { RootState, AppDispatch } from '../../store/recipesStore';
 import { Recipe } from './Recipe';
 import { Outlet, useNavigate } from 'react-router';
 const Recipes = () => {
@@ -10,10 +10,8 @@ const Recipes = () => {
   const { recipes, loading, error } = useSelector((state: RootState) => state.recipes);
   const navigate = useNavigate();
   let count = 0;
-  const handleUpdate = (recipe: Recipe) => {
-    console.log(recipe.id + "LLLLLLLLllllll")
-    // navigate(`${recipe.id}`)       
-    navigate(`/recipes/${recipe.id}`);
+  const handleUpdate = (recipe: Recipe) => {     
+    navigate(`${recipe.id}`);
     console.log("select one recipe");
   }
   useEffect(() => {
@@ -69,7 +67,7 @@ const Recipes = () => {
         </Button>
       ))}
     </Box>
-    <Outlet></Outlet>
+   <Outlet/>
   </>
   );
 }

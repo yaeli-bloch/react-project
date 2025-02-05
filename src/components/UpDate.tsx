@@ -14,14 +14,12 @@ const UpDate = () => {
     e.preventDefault();
     console.log("update");
     setOpen(false);
-    console.log(context?.user.id+"lllllllll");
-    if (!context?.user.id) {      
+      if (!context?.user.id) {      
       console.log("User ID is missing!");
       return;
     }    
     try {
-      console.log("updateeeeee");
-      const res = await fetch("http://localhost:3000/api/user/", {
+        const res = await fetch("http://localhost:3000/api/user/", {
         method: "PUT",
         body: JSON.stringify({
           firstName:context.user.firstName,
@@ -31,10 +29,7 @@ const UpDate = () => {
           phone: phoneRef.current?.value || "",
         }),
         headers: { "user-id":context?.user.id.toString(),"Content-Type": "application/json" },
-      });
-
-      const data1 = await res.json();     
-      console.log(data1.id)
+      });          
       if (res.status === 404) {
         console.log("user not found");
       } else {

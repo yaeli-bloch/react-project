@@ -36,8 +36,6 @@ export const userReducer=(state: User, action: Action):User=>{
 
             }
             default:
-                return state  
-    }
-
-    
+               return state  
+    } 
 }

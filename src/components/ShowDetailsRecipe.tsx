@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { RootState } from "../recipesStore";
+import { useParams } from "react-router";
+import { RootState } from "../store/recipesStore";
 import { Box, List, ListItem, ListItemText, Paper, Typography } from "@mui/material";
 
 const ShowDetailsRecipe=()=>{ 
-     const {id} =useParams();//זה לא שולף לי טוב 
+     const {id} =useParams();  
      const {recipes} = useSelector((state: RootState) => state.recipes);    
     const recipe = recipes.find(r=>r.id==Number(id));    
     if (!recipe) {
@@ -45,7 +45,7 @@ const ShowDetailsRecipe=()=>{
           <List sx={{ marginBottom: 3 }}>
             {recipe.ingredients.map((ingredient, index) => (
               <ListItem key={index}>
-                <ListItemText primary={ingredient} />
+               <ListItemText primary={ingredient} />
               </ListItem>
             ))}
           </List>

@@ -6,8 +6,9 @@ interface InputFieldProps {
   register: any;
   error?: boolean;
   helperText?: string;
+  multiline?: boolean;  
 }
-const InputField = ({ label, placeholder, register, error, helperText }: InputFieldProps) => {
+const InputField = ({ label, placeholder, register, error, helperText ,multiline=false}: InputFieldProps) => {
   return (
     <TextField
       {...register}
@@ -15,6 +16,7 @@ const InputField = ({ label, placeholder, register, error, helperText }: InputFi
       variant="outlined"
       fullWidth
       placeholder={placeholder}
+      multiline={multiline}
       sx={{
         marginBottom: 2,
         '& .MuiOutlinedInput-root': {
@@ -25,6 +27,9 @@ const InputField = ({ label, placeholder, register, error, helperText }: InputFi
             borderColor: '#40E0D0',
           },
           '& input': {
+            color: '#fff',
+          },
+          '& textarea': {
             color: '#fff',
           },
         },

@@ -1,11 +1,11 @@
 import { Box, Container, Typography } from "@mui/material";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AppDispatch } from "../recipesStore";
+import { AppDispatch } from "../store/recipesStore";
 import { useDispatch } from "react-redux";
 import { object, string } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { fetchAddRecipe } from "../recipesSlice";
+import { fetchAddRecipe } from "../store/recipesSlice";
 import { UserContext } from "./HomePage";
 import InputField from './InputField';
 import SubmitButton from './SubmitButton';
@@ -62,43 +62,50 @@ const AddRecipe = () => {
         </Typography>
         {open && (
           <form onSubmit={handleSubmit(onSubmit)}>
-            <InputField
-              label="Title"
-              placeholder="Enter title"
-              register={register("title")}
-              error={!!errors.title}
-              helperText={errors.title?.message}
-            />
-            <InputField
-              label="Description"
-              placeholder="Enter description"
-              register={register("description")}
-              error={!!errors.description}
-              helperText={errors.description?.message}
-            />
-            <InputField
-              label="Ingredients (separate by commas)"
-              placeholder="Enter ingredients"
-              register={register("ingredients")}
-              error={!!errors.ingredients}
-              helperText={errors.ingredients?.message}
-            />
-            <InputField
-              label="Instructions"
-              placeholder="Enter instructions"
-              register={register("instructions")}
-              error={!!errors.instructions}
-              helperText={errors.instructions?.message}
-            />
-            <InputField
-              label="Products"
-              placeholder="Enter products"
-              register={register("products")}
-              error={!!errors.products}
-              helperText={errors.products?.message}
-            />
-            <SubmitButton type="submit" />
-          </form>
+          <InputField
+            label="Title"
+            placeholder="Enter title"
+            register={register("title")}
+            error={!!errors.title}
+            helperText={errors.title?.message}
+          />
+          
+          <InputField
+            label="Description"
+            placeholder="Enter description"
+            register={register("description")}
+            error={!!errors.description}
+            helperText={errors.description?.message}
+          />
+          
+          <InputField
+            label="Ingredients (separate by commas)"
+            placeholder="Enter ingredients"
+            register={register("ingredients")}
+            error={!!errors.ingredients}
+            helperText={errors.ingredients?.message}
+            multiline           
+          />
+          
+          <InputField
+            label="Instructions"
+            placeholder="Enter instructions"
+            register={register("instructions")}
+            error={!!errors.instructions}
+            helperText={errors.instructions?.message}
+            multiline            
+          />
+          
+          <InputField
+            label="Products"
+            placeholder="Enter products"
+            register={register("products")}
+            error={!!errors.products}
+            helperText={errors.products?.message}
+            multiline            
+          />          
+          <SubmitButton type="submit" />
+        </form>
         )}
 
         {!open && (
