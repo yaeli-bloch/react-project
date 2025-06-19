@@ -57,6 +57,7 @@ const HomePage = () => {
         {isLogin && <UpDate></UpDate>}
         {isLogin && <AddRecipe></AddRecipe>}
       </UserContext>
+     
     </Box>
 
 
